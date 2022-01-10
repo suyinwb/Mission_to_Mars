@@ -17,7 +17,13 @@ The next bit of information Robin wants to have included in her app is a collect
 She already has decided which webpage she'll use for fact scraping, but the information is held in a table format.
 
 ## Overview of Project
+
+Robin's web app is looking good and functioning well, but she wants to add more polish to it. She had been admiring images of Mars’s hemispheres online and realized that the site is scraping-friendly. She would like to adjust the current web app to include all four of the hemisphere images. To do this, you’ll use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemispheres and the titles of those images, store the scraped data on a Mongo database, use a web application to display the data, and alter the design of the web app to accommodate these images.
+
+
 ### Purpose
+
+Scrape 3 different websites to get Mars / NASA related data.
 
 
 ## Analysis And Challenges
@@ -43,9 +49,12 @@ She already has decided which webpage she'll use for fact scraping, but the info
 
 
 #### 7. Acknowledging Limitations
-As we are only using weather data, it does not necessarily indicates that our business will be successful as Oahu, Hawaii still depends largely on tourists as customers and currently with Covid restriction, the lack of tourist customers will still impact business even if the weather is amazing.
+Using Mac OS, define the mongo dbpath when starting mongodb.
+```
+mongod --dbpath /usr/local/var/mongodb
+```
+Can also look into defining this path permanently in /etc/ but not sure where it is supposed to be in Mac OS.
 
-I wasn't sure of the table name in sqlite file so I have used the sqlite cli command to find out (more commands here: https://sqlite.org/cli.html): sqlite3 --> .database --> .tables
 
 #### 8. Making the Call:
 The "Proper" Conclusion is indicated below on [Summary](#summary)
@@ -67,6 +76,7 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 
 ## Appendix
 
+Splinter Help
 ```
 Splinter provides 6 methods to finding elements:
 browser.find_by_css('h1')
@@ -76,4 +86,26 @@ browser.find_by_name('name')
 browser.find_by_text('Hello World!')
 browser.find_by_id('firstheader')
 browser.find_by_value('query')
+```
+
+Mongo Commands
+
+* show which database you're working on
+```
+> db
+practicedb
+```
+
+* switch database
+```
+> use practicedb
+switched to db practicedb
+```
+
+* see how many databases are stored locally
+```
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
 ```
