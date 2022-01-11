@@ -38,7 +38,6 @@ Scrape 3 different websites to get Mars / NASA related data.
 
 
 #### 2. Identify the Datasource
-*
 
 #### 3. Define Strategy & Metrics
 **Resource:** Python 3, Flask, Pandas, Jupyter Notebook, Splinter, Beautiful Soup, PyMongo, MongoDB, HTML5Lib, LXML
@@ -53,11 +52,39 @@ Scrape 3 different websites to get Mars / NASA related data.
 
 
 #### 7. Acknowledging Limitations
-Using Mac OS, define the mongo dbpath when starting mongodb.
+
+#####The study material has a lot of problems for MacOS that needs troubleshooting
+
+1. Mongodb: define mongo dbpath when starting mongodb.
 ```
 mongod --dbpath /usr/local/var/mongodb
 ```
 Can also look into defining this path permanently in /etc/ but not sure where it is supposed to be in Mac OS.
+
+2. chromedriver for selenium installation method
+```
+pip install chromedriver
+```
+did not install chromedriver properly and therefore when running the python script, we received this error:
+```
+FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver'
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+```
+
+ Use brew to install properly.
+```
+brew install --cask chromedriver
+```
+
+3. Accessing mongo
+the command below is deprecated
+```
+mongo
+```
+use this command below:
+```
+mongosh
+```
 
 
 #### 8. Making the Call:
@@ -80,7 +107,7 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 
 ## Appendix
 
-Splinter Help
+###Splinter Help
 ```
 Splinter provides 6 methods to finding elements:
 browser.find_by_css('h1')
@@ -92,14 +119,36 @@ browser.find_by_id('firstheader')
 browser.find_by_value('query')
 ```
 
-Beautiful soup information
+###Beautiful soup information
 ```
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 ```
 
-Mongo Commands
+###Pymongo
 
-use **mongosh** as _mongo_ is deprecated.
+see documentation on new updates:
+* https://kb.objectrocket.com/mongo-db/how-to-update-a-mongodb-document-in-python-356
+* https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html
+
+check version
+```
+pip freeze | grep pymongo
+pymongo==4.0.1
+```
+
+update command is deprecated
+```
+mars.update({}, mars_data, upsert=True)
+````
+replace update with update_many or update_one
+
+```
+mars.update_many({}, {"$set": mars_data}, upsert=True)
+```
+
+
+###Mongo Commands
+
 
 * show which database you're working on
 ```
