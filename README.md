@@ -16,6 +16,10 @@ The next bit of information Robin wants to have included in her app is a collect
 
 She already has decided which webpage she'll use for fact scraping, but the information is held in a table format.
 
+Robin has refactored her code so that it separates each scraping section into its own function, which will make reusing the code a much simpler task. She has already built out the Flask routes as well, which is an integral part of scraping—without the routes, the web app simply wouldn't function.
+
+Robin has also set up a Mongo database to hold the data that gets scraped. The next step is to integrate Mongo into the web app. She wants the script to update the data stored in Mongo each time it's run.
+
 ## Overview of Project
 
 Robin's web app is looking good and functioning well, but she wants to add more polish to it. She had been admiring images of Mars’s hemispheres online and realized that the site is scraping-friendly. She would like to adjust the current web app to include all four of the hemisphere images. To do this, you’ll use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemispheres and the titles of those images, store the scraped data on a Mongo database, use a web application to display the data, and alter the design of the web app to accommodate these images.
@@ -88,7 +92,14 @@ browser.find_by_id('firstheader')
 browser.find_by_value('query')
 ```
 
+Beautiful soup information
+```
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+```
+
 Mongo Commands
+
+use **mongosh** as _mongo_ is deprecated.
 
 * show which database you're working on
 ```
@@ -108,4 +119,64 @@ switched to db practicedb
 admin   0.000GB
 config  0.000GB
 local   0.000GB
+```
+
+*insert one data
+```
+> db.zoo.insertOne({name: 'Cleo', species: 'jaguar', age: 12, hobbies: ['sleeping', 'eating', 'climbing']})
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("61dcb28affc5dd9365e44cfe")
+}
+```
+
+* see what data are already in the db
+```
+> show collections
+zoo
+```
+
+* view what's inside a collection with the find() command.
+```
+> db.zoo.find()
+{ "_id" : ObjectId("61dcb28affc5dd9365e44cfe"), "name" : "Cleo", "species" : "jaguar", "age" : 12, "hobbies" : [ "sleeping", "eating", "climbing" ] }
+{ "_id" : ObjectId("61dcb2c7ffc5dd9365e44cff"), "name" : "Banzai", "species" : "fox", "age" : 1, "hobbies" : [ "sleeping", "eating", "playing" ] }
+```
+
+* delete one document
+```
+> db.zoo.deleteOne({name: 'Cleo'})
+{ "acknowledged" : true, "deletedCount" : 1 }
+```
+
+* delete one document
+```
+> db.zoo.deleteOne({name: 'Cleo'})
+{ "acknowledged" : true, "deletedCount" : 1 }
+```
+
+* remove all collections
+```
+db.zoo.remove({})
+```
+
+* remove all collections
+```
+db.zoo.remove({})
+```
+
+* remove the whole zoo collection
+
+```
+db.zoo.drop()
+```
+
+* remove database
+```
+db.dropDatabase()
+```
+
+* show all databases
+```
+show dbs
 ```
