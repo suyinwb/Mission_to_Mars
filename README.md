@@ -108,8 +108,10 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 ## Appendix
 
 ###Splinter Help
-```
+
 Splinter provides 6 methods to finding elements:
+
+```
 browser.find_by_css('h1')
 browser.find_by_xpath('//h1')
 browser.find_by_tag('h1')
