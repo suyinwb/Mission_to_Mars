@@ -107,7 +107,7 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 
 ## Appendix
 
-###Splinter Help
+### Splinter Help
 
 Splinter provides 6 methods to finding elements:
 
@@ -121,12 +121,12 @@ browser.find_by_id('firstheader')
 browser.find_by_value('query')
 ```
 
-###Beautiful soup information
+### Beautiful soup information
 ```
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 ```
 
-###Pymongo
+### Pymongo
 
 see documentation on new updates:
 * https://kb.objectrocket.com/mongo-db/how-to-update-a-mongodb-document-in-python-356
@@ -149,7 +149,7 @@ mars.update_many({}, {"$set": mars_data}, upsert=True)
 ```
 
 
-###Mongo Commands
+### Mongo Commands
 
 
 * show which database you're working on
