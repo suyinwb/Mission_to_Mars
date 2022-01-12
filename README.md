@@ -56,8 +56,6 @@ The data are mostly cleaned while scrapping.
 
 #### 6. Analyse for Trends
 
-
-
 #### 7. Acknowledging Limitations
 
 ##### The study material has a lot of problems for MacOS that needs troubleshooting
@@ -156,7 +154,9 @@ This is a really fun project to gather data from different websites when there i
 
 ## Appendix
 
-### Splinter Help
+### Splinter
+
+Splinter documentation: https://splinter.readthedocs.io/
 
 Splinter provides 6 methods to finding elements:
 
