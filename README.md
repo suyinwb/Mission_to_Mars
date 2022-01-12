@@ -29,24 +29,30 @@ Robin's web app is looking good and functioning well, but she wants to add more 
 
 Scrape 4 different websites to get Mars / NASA related data.
 
-
 ## Analysis And Challenges
 
 ## Methodology: Analytics Paradigm
 
 #### 1. Decomposing the Ask
 
+Since all the information required isn't easily available through API or dataset, we need to use splinter to traverse the different webpages to get the information required.
 
 #### 2. Identify the Datasource
-1.
+1. https://mars.nasa.gov/news/
+2. https://spaceimages-mars.com
+3. https://galaxyfacts-mars.com
+4. https://marshemispheres.com/
 
 #### 3. Define Strategy & Metrics
 **Resource:** Python 3, Flask, Pandas, Jupyter Notebook, Splinter, Beautiful Soup, PyMongo, MongoDB, HTML5Lib, LXML
 
 #### 4. Data Retrieval Plan
 
+Use splinter to scrape the information from the different html/css tags.
 
 #### 5. Assemble & Clean the Data
+
+The data are mostly cleaned while scrapping.
 
 #### 6. Analyse for Trends
 
@@ -63,6 +69,7 @@ mongod --dbpath /usr/local/var/mongodb
 Can also look into defining this path permanently in /etc/ but not sure where it is supposed to be in Mac OS.
 
 2. chromedriver for selenium installation method
+
 ```
 pip install chromedriver
 ```
@@ -73,10 +80,11 @@ selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executabl
 ```
 
 Use brew to install properly.
-
 ```
 brew install --cask chromedriver
 ```
+
+Then use the steps below to ensure that everything will run smoothly
 
 >chromedriver error when running the script after installing chromedriver properly
 
@@ -91,10 +99,12 @@ brew install --cask chromedriver
 ![Error 3](resources/chromedriver_error3.png)
 
 3. Accessing mongo
+
 the command below is deprecated
 ```
 mongo
 ```
+
 use this command below:
 ```
 mongosh
