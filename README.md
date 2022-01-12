@@ -78,15 +78,15 @@ Use brew to install properly.
 brew install --cask chromedriver
 ```
 
->June Temperature Aggregates
+>chromedriver error when running the script after installing chromedriver properly
 
 ![Error 1](resources/chromedriver_error1.png)
 
->June Temperature Aggregates
+>Go to Security & Privacy settings and click "Allow Anyway"
 
 ![Error 2](resources/chromedriver_error2.png)
 
->June Temperature Aggregates
+>Run the script again and click "Open", you only need to do this once
 
 ![Error 3](resources/chromedriver_error3.png)
 
