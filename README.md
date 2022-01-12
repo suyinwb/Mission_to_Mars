@@ -86,6 +86,18 @@ use this command below:
 mongosh
 ```
 
+4. Deprecated pyMongo command in python
+
+update command is deprecated
+```
+mars.update({}, mars_data, upsert=True)
+````
+replace update with replace_one
+
+```
+mars.replace_one({}, mars_data, upsert=True)
+```
+
 
 #### 8. Making the Call:
 The "Proper" Conclusion is indicated below on [Summary](#summary)
@@ -136,16 +148,6 @@ check version
 ```
 pip freeze | grep pymongo
 pymongo==4.0.1
-```
-
-update command is deprecated
-```
-mars.update({}, mars_data, upsert=True)
-````
-replace update with update_many or update_one
-
-```
-mars.update_many({}, {"$set": mars_data}, upsert=True)
 ```
 
 
