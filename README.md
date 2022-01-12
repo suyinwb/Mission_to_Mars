@@ -60,7 +60,7 @@ The data are mostly cleaned while scrapping.
 
 #### 7. Acknowledging Limitations
 
-#####The study material has a lot of problems for MacOS that needs troubleshooting
+##### The study material has a lot of problems for MacOS that needs troubleshooting
 
 1. Mongodb: define mongo dbpath when starting mongodb.
 ```
@@ -152,7 +152,7 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 
 ## Summary
 
-This is a really fun project to gather data from different websites when there is no API or dataset.
+This is a really fun project to gather data from different websites when there is no API or dataset available.
 
 ## Appendix
 
