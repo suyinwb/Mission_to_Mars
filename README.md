@@ -27,7 +27,7 @@ Robin's web app is looking good and functioning well, but she wants to add more 
 
 ### Purpose
 
-Scrape 3 different websites to get Mars / NASA related data.
+Scrape 4 different websites to get Mars / NASA related data.
 
 
 ## Analysis And Challenges
@@ -38,6 +38,7 @@ Scrape 3 different websites to get Mars / NASA related data.
 
 
 #### 2. Identify the Datasource
+1.
 
 #### 3. Define Strategy & Metrics
 **Resource:** Python 3, Flask, Pandas, Jupyter Notebook, Splinter, Beautiful Soup, PyMongo, MongoDB, HTML5Lib, LXML
@@ -71,10 +72,23 @@ FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver'
 selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
 ```
 
- Use brew to install properly.
+Use brew to install properly.
+
 ```
 brew install --cask chromedriver
 ```
+
+>June Temperature Aggregates
+
+![Error 1](resources/chromedriver_error1.png)
+
+>June Temperature Aggregates
+
+![Error 2](resources/chromedriver_error2.png)
+
+>June Temperature Aggregates
+
+![Error 3](resources/chromedriver_error3.png)
 
 3. Accessing mongo
 the command below is deprecated
@@ -104,18 +118,31 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 
 ## Analysis
 
->June Temperature Aggregates
+### Deliverable 3: Add Bootstrap 3 Components
 
-![June Temperature Aggregates](resources/junetempdesc.png)
+1. Make the site mobile responsive
 
->June Temperature
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+```
 
-![June Temperature](resources/junetemp.png)
+2. make all 4 of the for hemipheres in one row
 
+```
+{% for hemisphere in mars.hemispheres %}
+<div class="col-md-3">
+	<div class="thumbnail">
+```
+
+3. Change the button colour to light green/blue with info
+```
+<p><a class="btn btn-info btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+```
 
 
 ## Summary
 
+This is a really fun project to gather data from different websites when there is no API or dataset.
 
 ## Appendix
 
