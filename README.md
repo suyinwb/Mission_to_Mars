@@ -153,7 +153,7 @@ The "Proper" Conclusion is indicated below on [Summary](#summary)
 This is a really fun project to gather data from different websites when there is no API or dataset available.
 
 ## Appendix
-
+----
 ### Splinter
 
 Splinter documentation: https://splinter.readthedocs.io/
@@ -169,12 +169,12 @@ browser.find_by_text('Hello World!')
 browser.find_by_id('firstheader')
 browser.find_by_value('query')
 ```
-
+----
 ### Beautiful soup information
 ```
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 ```
-
+----
 ### Pymongo
 
 see documentation on new updates:
@@ -186,8 +186,7 @@ check version
 pip freeze | grep pymongo
 pymongo==4.0.1
 ```
-
-
+----
 ### Mongo Commands
 
 
